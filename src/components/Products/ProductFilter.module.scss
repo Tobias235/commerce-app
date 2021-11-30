@@ -1,0 +1,46 @@
+@use "../../assets/util" as *;
+
+.productFilter {
+  position: absolute;
+  width: 100%;
+  height: auto;
+  padding-bottom: 15px;
+  background-color: white;
+  @include respond-to("small") {
+    position: unset;
+    width: 20%;
+  }
+
+  h1 {
+    text-align: center;
+    margin: 25px;
+  }
+
+  .filter {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    button {
+      width: 70%;
+      height: 50px;
+      margin: 10px;
+      border: none;
+      background-color: rgb(228, 156, 22);
+      border-radius: 10px;
+    }
+
+    h3 {
+      margin-top: 15px;
+    }
+
+    .filterPrice {
+      width: 70%;
+      display: flex;
+      justify-content: space-between;
+      input {
+        width: 50px;
+      }
+    }
+  }
+}

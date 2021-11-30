@@ -1,0 +1,9 @@
+@use "../../assets/util" as *;
+
+.option {
+  width: 95%;
+  margin-top: 50px;
+  @include respond-to("small") {
+    width: 55%;
+  }
+}

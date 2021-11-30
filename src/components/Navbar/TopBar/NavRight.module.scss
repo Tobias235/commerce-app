@@ -1,0 +1,12 @@
+@use "../../../assets/util" as *;
+
+.navRight {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  @include respond-to("medium") {
+    width: 120px;
+  }
+}

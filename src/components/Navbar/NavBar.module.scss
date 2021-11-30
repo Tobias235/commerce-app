@@ -1,0 +1,33 @@
+@use "../../assets/util" as *;
+
+.navBar {
+  height: 60px;
+  width: 80%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+
+  .desktopNav {
+    display: none;
+    @include respond-to("small") {
+      display: flex;
+    }
+  }
+
+  .mobileNav {
+    display: flex;
+    @include respond-to("small") {
+      display: none;
+    }
+  }
+
+  div {
+    display: flex;
+    align-items: center;
+    width: 100%;
+
+    .navBtns {
+      width: 60%;
+    }
+  }
+}

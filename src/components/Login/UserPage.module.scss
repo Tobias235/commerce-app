@@ -1,0 +1,50 @@
+@use "../../assets/util" as *;
+
+.userPage {
+  width: 100%;
+  height: 100%;
+  min-height: 60vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @include respond-to("small") {
+    min-height: 50vh;
+  }
+
+  .userContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    padding: 40px;
+    border-radius: 15px;
+    background-color: white;
+    @include respond-to("small") {
+      width: 50%;
+    }
+
+    .userButtons {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 15px;
+      @include respond-to("small") {
+        flex-direction: row;
+        justify-content: center;
+      }
+      button {
+        width: 85%;
+        height: 50px;
+        margin: 10px;
+        border: none;
+        background-color: rgb(228, 156, 22);
+        border-radius: 10px;
+        @include respond-to("small") {
+          width: 120px;
+        }
+      }
+    }
+  }
+}

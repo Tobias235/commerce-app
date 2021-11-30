@@ -1,0 +1,62 @@
+@use "../../assets/util" as *;
+
+.productsList {
+  width: 90%;
+  height: 100%;
+  margin: auto;
+  @include respond-to("small") {
+    width: 75%;
+  }
+
+  h1 {
+    text-align: center;
+    margin: 25px;
+  }
+
+  .filter {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .productContainer {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    .card {
+      width: 45%;
+      height: auto;
+      background-color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      border-radius: 15px;
+      margin: 15px 5px;
+      @include respond-to("small") {
+        width: 25%;
+      }
+
+      img {
+        width: 100%;
+        margin-bottom: 10px;
+      }
+
+      p {
+        margin: 10px;
+      }
+
+      button {
+        width: 80%;
+        height: 50px;
+        margin: 10px;
+        border: none;
+        background-color: rgb(228, 156, 22);
+        border-radius: 10px;
+
+        span {
+          vertical-align: middle;
+        }
+      }
+    }
+  }
+}

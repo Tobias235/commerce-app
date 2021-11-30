@@ -1,0 +1,93 @@
+@use "../../assets/util" as *;
+
+.cartItem {
+  padding: 25px 0;
+  border-bottom: 2px solid rgba(156, 156, 156, 0.3);
+  @include respond-to("small") {
+    display: flex;
+    flex-direction: row;
+    margin-top: 15px;
+    padding: 25px;
+    border-bottom: 2px solid rgba(156, 156, 156, 0.3);
+  }
+  .cartSpacing {
+    @include respond-to("small") {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+    }
+  }
+
+  .wrapper {
+    display: flex;
+    .cartInfo {
+      width: 150px;
+      display: flex;
+      flex-direction: column;
+    }
+  }
+  img {
+    width: 100px;
+  }
+
+  input {
+    width: 23px;
+    height: 23px;
+    text-align: center;
+    margin: 0 5px;
+    padding: 0;
+    border-radius: 5px;
+    @include respond-to("small") {
+      width: 25px;
+      height: 25px;
+      text-align: center;
+      margin: 5px;
+      padding: 0;
+      border-radius: 5px;
+    }
+  }
+
+  button {
+    height: 25px;
+    width: 25px;
+    padding: 0;
+    border: none;
+    background-color: rgb(228, 156, 22);
+    border-radius: 5px;
+    @include respond-to("small") {
+      height: 29px;
+      width: 29px;
+      vertical-align: middle;
+      padding: 0;
+      border: none;
+      border-radius: 5px;
+    }
+  }
+
+  .cartAmount {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 10px;
+    @include respond-to("small") {
+      width: 100%;
+      margin: 0;
+    }
+  }
+  .cartBtns {
+    margin-right: 15px;
+    @include respond-to("small") {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
+  .price {
+    margin-right: 20px;
+    justify-content: flex-end;
+  }
+}

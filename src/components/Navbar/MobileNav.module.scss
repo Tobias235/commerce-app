@@ -1,0 +1,35 @@
+@use "../../assets/util" as *;
+
+.hamburger {
+  position: absolute;
+  top: 40px;
+  width: 100%;
+  height: auto;
+  background-color: white;
+  padding-bottom: 20px;
+  @include respond-to("small") {
+    display: none;
+  }
+
+  h1 {
+    text-align: center;
+    margin: 15px;
+  }
+
+  ul {
+    display: flex;
+    flex-direction: column;
+  }
+
+  li {
+    width: 100%;
+    list-style-type: none;
+    text-align: center;
+    margin-bottom: 15px;
+    padding: 15px 0;
+
+    &:hover {
+      border: 2px solid rgb(228, 156, 22);
+    }
+  }
+}

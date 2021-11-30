@@ -1,0 +1,18 @@
+@use "../../../assets/util" as *;
+
+.navLeft {
+  display: none;
+  @include respond-to("medium") {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 300px;
+  }
+
+  span {
+    @include respond-to("medium") {
+      vertical-align: middle;
+      margin-right: 5px;
+    }
+  }
+}

@@ -1,0 +1,14 @@
+.topNav {
+  display: flex;
+  align-items: center;
+  height: 40px;
+  width: 100%;
+  background-color: rgb(228, 156, 22);
+
+  .navContainer {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    margin: auto;
+  }
+}

@@ -1,0 +1,17 @@
+.form {
+  width: 95%;
+  display: flex;
+  justify-content: flex-end;
+
+  button {
+    background-color: rgb(228, 156, 22);
+    border: none;
+    margin-left: 5px;
+    border-radius: 5px;
+
+    span {
+      color: white;
+      vertical-align: middle;
+    }
+  }
+}

@@ -1,0 +1,19 @@
+@use "../../assets/util" as *;
+
+.homeBtns {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+
+  button {
+    width: 80px;
+    height: 40px;
+    border: none;
+    background-color: wheat;
+    border-radius: 15px;
+    @include respond-to("small") {
+      width: 150px;
+      height: 40px;
+    }
+  }
+}
