@@ -10,7 +10,7 @@ function App() {
     <div className={styles.app}>
       <TopNav />
       <NavBar />
-      <MobileNav />
+      {/* <MobileNav /> */}
       <Main />
     </div>
   );

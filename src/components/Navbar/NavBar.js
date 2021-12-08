@@ -1,4 +1,3 @@
-import MobileNav from "./MobileNav";
 import styles from "./NavBar.module.scss";
 import NavBarBtns from "./NavBarBtns";
 import NavBarForm from "./NavBarForm";
@@ -7,7 +6,7 @@ const NavBar = () => {
   return (
     <nav className={styles.navBar}>
       <div className={styles.mobileNav}>
-        <span class="material-icons-outlined">menu</span>
+        <span className="material-icons-outlined">menu</span>
       </div>
       <div className={styles.desktopNav}>
         <h1>Commerce</h1>

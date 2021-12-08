@@ -12,8 +12,8 @@ const ProductFilter = () => {
 
         <h3>Price Range</h3>
         <div className={styles.filterPrice}>
-          <input type="number" value="0" />
-          <input type="number" value="1000" />
+          {/* <input type="number" value="0" />
+          <input type="number" value="1000" /> */}
         </div>
       </div>
     </div>
