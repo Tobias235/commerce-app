@@ -13,6 +13,7 @@ function AdminPage() {
   const productCategory = useRef("");
   const productPrice = useRef("");
   const sortBy = useRef("");
+  const productBrand = useRef("");
 
   const { postData: getProduct } = usePostProduct();
 
@@ -23,6 +24,7 @@ function AdminPage() {
       productName.current.value.trim() === "" ||
       productCategory.current.value.trim() === "" ||
       productPrice.current.value.trim() === "" ||
+      productBrand.current.value.trim() === "" ||
       image === ""
     ) {
       return;
@@ -35,10 +37,12 @@ function AdminPage() {
       getDownloadURL(starsRef).then((url) => {
         setProduct({
           category: productCategory.current.value,
+          brand: productBrand.current.value,
           name: productName.current.value,
           description: productDescription.current.value,
           price: productPrice.current.value,
           sort: sortBy.current.value,
+          value: 1,
           image: url,
         });
       });
@@ -64,6 +68,13 @@ function AdminPage() {
             <option value="child">Child</option>
             <option value="men">Men</option>
           </select>
+          <label htmlFor="brand">Product Brand</label>
+          <input
+            type="text"
+            id="brand"
+            placeholder="Product Brand"
+            ref={productBrand}
+          />
           <label htmlFor="name">Product Name</label>
           <input
             type="text"

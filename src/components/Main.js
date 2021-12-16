@@ -9,6 +9,8 @@ import AdminPage from "./Login/AdminPage";
 import Cart from "./Cart/Cart";
 
 import styles from "./Main.module.scss";
+import ConfirmedOrder from "./Cart/ConfirmedOrder";
+import OrderHistory from "./Login/OrderHistory";
 
 const Main = () => {
   return (
@@ -21,6 +23,8 @@ const Main = () => {
         <Route path="userpage" element={<UserPage />} />
         <Route path="admin" element={<AdminPage />} />
         <Route path="cart" element={<Cart />} />
+        <Route path="orderconfirmed" element={<ConfirmedOrder />} />
+        <Route path="orderhistory" element={<OrderHistory />} />
       </Routes>
     </main>
   );

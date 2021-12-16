@@ -17,11 +17,13 @@ const useGetProducts = () => {
       loadedProducts.push({
         id: key,
         category: data[key].category,
+        brand: data[key].brand,
         description: data[key].description,
         image: data[key].image,
         name: data[key].name,
         price: data[key].price,
         sort: data[key].sort,
+        value: 1,
       });
     }
     setProducts(loadedProducts);

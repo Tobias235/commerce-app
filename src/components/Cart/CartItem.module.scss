@@ -25,10 +25,12 @@
       width: 150px;
       display: flex;
       flex-direction: column;
+      margin: 7px;
     }
   }
   img {
-    width: 100px;
+    width: 80px;
+    border-radius: 10px;
   }
 
   input {

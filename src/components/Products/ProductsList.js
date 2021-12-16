@@ -1,13 +1,26 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import useGetProducts from "../../hooks/useGetProducts";
 
 import styles from "./ProductsList.module.scss";
 
 const ProductsList = () => {
+  const [cart, setCart] = useState([]);
   const { products, getProducts } = useGetProducts();
   useEffect(() => {
     getProducts();
   }, []);
+
+  let cartArray = [];
+
+  const handleAddCart = (e) => {
+    console.log(e.target.value);
+    const checkArray = products.find(
+      (product) => product.id === e.target.value
+    );
+    cartArray = [checkArray, ...cart];
+    setCart([...cartArray]);
+    localStorage.setItem("cart", JSON.stringify(cartArray));
+  };
 
   const render = products ? true : false;
 
@@ -29,7 +42,11 @@ const ProductsList = () => {
                 <h3>{product.name}</h3>
                 <p>{product.description}</p>
                 <span>${product.price}</span>
-                <button>
+                <button
+                  type="button"
+                  onClick={handleAddCart}
+                  value={product.id}
+                >
                   Add
                   <span className="material-icons-outlined">
                     add_shopping_cart

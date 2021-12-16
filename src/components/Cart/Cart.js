@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 import styles from "./Cart.module.scss";
 import CartItem from "./CartItem";
 
@@ -9,7 +11,9 @@ const Cart = () => {
         <CartItem />
         <div className={styles.completeOrder}>
           <span>Total: 99USD</span>
-          <button className={styles.completeOrderBtn}>Complete Order</button>
+          <button className={styles.completeOrderBtn}>
+            <Link to="/orderconfirmed">Complete Order</Link>
+          </button>
         </div>
       </div>
     </div>
