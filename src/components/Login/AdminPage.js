@@ -8,6 +8,7 @@ import styles from "./AdminPage.module.scss";
 function AdminPage() {
   const [image, setImage] = useState("");
   const [product, setProduct] = useState(null);
+  const [postProducts, setPostProducts] = useState(null);
   const productName = useRef("");
   const productDescription = useRef("");
   const productCategory = useRef("");
@@ -19,6 +20,7 @@ function AdminPage() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    setPostProducts(e.target.id);
     if (
       productDescription.current.value.trim() === "" ||
       productName.current.value.trim() === "" ||
@@ -53,14 +55,14 @@ function AdminPage() {
   };
 
   useEffect(() => {
-    getProduct(product);
+    getProduct(product, postProducts);
   }, [product]);
 
   return (
     <div className={styles.adminPage}>
       <div className={styles.adminForm}>
         <h2>Add Product</h2>
-        <form onSubmit={handleSubmit}>
+        <form id="products" onSubmit={handleSubmit}>
           <label htmlFor="sortBy">Sort By</label>
           <select ref={sortBy}>
             <option value="others">Others</option>
@@ -104,7 +106,7 @@ function AdminPage() {
             ref={productPrice}
           />
           <label htmlFor="file-upload" className={styles.customFile}>
-            Custom Upload
+            Upload Picture
           </label>
           <input
             id="file-upload"

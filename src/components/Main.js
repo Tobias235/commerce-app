@@ -12,9 +12,9 @@ import styles from "./Main.module.scss";
 import ConfirmedOrder from "./Cart/ConfirmedOrder";
 import OrderHistory from "./Login/OrderHistory";
 
-const Main = () => {
+const Main = ({ onClose }) => {
   return (
-    <main className={styles.main}>
+    <main className={styles.main} onClick={onClose}>
       <Routes>
         <Route path="/" element={<Jumbotron />} />
         <Route path="contacts" element={<ContactForm />} />

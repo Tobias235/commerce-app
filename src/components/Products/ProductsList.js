@@ -3,7 +3,7 @@ import useGetProducts from "../../hooks/useGetProducts";
 
 import styles from "./ProductsList.module.scss";
 
-const ProductsList = () => {
+const ProductsList = ({ onShow, onClose }) => {
   const [cart, setCart] = useState([]);
   const { products, getProducts } = useGetProducts();
   useEffect(() => {
@@ -31,9 +31,11 @@ const ProductsList = () => {
       {/* filter for mobile */}
       <div className={styles.filter}>
         Filter
-        <span className="material-icons-outlined">filter_alt</span>
+        <span className="material-icons-outlined" onClick={onShow}>
+          filter_alt
+        </span>
       </div>
-      <div className={styles.productContainer}>
+      <div className={styles.productContainer} onClick={onClose}>
         {render &&
           products.map((product) => {
             return (

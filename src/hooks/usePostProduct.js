@@ -1,8 +1,9 @@
 const usePostProduct = () => {
-  const postData = async (product) => {
+  const postData = async (product, url) => {
+    console.log(product, url);
     if (product !== null) {
       const response = await fetch(
-        "https://commerce-app-ebe6d-default-rtdb.europe-west1.firebasedatabase.app/products.json",
+        `https://commerce-app-ebe6d-default-rtdb.europe-west1.firebasedatabase.app/${url}.json`,
         {
           method: "POST",
           body: JSON.stringify(product),

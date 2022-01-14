@@ -1,6 +1,37 @@
+import { useEffect, useState } from "react";
+import useGetOrderHistory from "../../hooks/useGetOrderHistory";
+import OrderDetails from "./OrderDetails";
 import styles from "./OrderHistory.module.scss";
 
 const OrderHistory = () => {
+  const [showDetails, setShowDetails] = useState([]);
+  const { orderHistory, getOrderHistory } = useGetOrderHistory();
+
+  useEffect(() => {
+    getOrderHistory("orders");
+  }, []);
+
+  useEffect(() => {
+    setShowDetails(orderHistory);
+  }, [orderHistory]);
+
+  const handleShowDetails = (e) => {
+    const orderNumber = Number(e.currentTarget.id);
+    setShowDetails(
+      showDetails.map((order) => {
+        if (order.orderNumber === orderNumber) {
+          return {
+            ...order,
+            details: !order.details,
+          };
+        }
+        return order;
+      })
+    );
+  };
+
+  const showHistory = orderHistory ? true : false;
+
   return (
     <div className={styles.orderHistory}>
       <div className={styles.orderHistoryContainer}>
@@ -11,12 +42,25 @@ const OrderHistory = () => {
           <span>Status</span>
           <span>Total</span>
         </div>
-        <div className={styles.list}>
-          <span>2021-12-15</span>
-          <span>0001</span>
-          <span>Sent</span>
-          <span>$53</span>
-        </div>
+        {showHistory &&
+          showDetails.map((order) => {
+            return (
+              <div
+                className={styles.orderContainer}
+                id={order.orderNumber}
+                key={order.orderNumber}
+                onClick={handleShowDetails}
+              >
+                <div className={styles.list}>
+                  <span>{order.date}</span>
+                  <span>{order.orderNumber}</span>
+                  <span>{order.status}</span>
+                  <span>${order.total}</span>
+                </div>
+                <OrderDetails order={order} />
+              </div>
+            );
+          })}
       </div>
     </div>
   );

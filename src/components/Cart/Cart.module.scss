@@ -32,18 +32,21 @@
     }
     .completeOrder {
       display: flex;
-      justify-content: center;
       flex-direction: column;
       align-items: center;
       margin-top: 15px;
 
       .completeOrderBtn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
         width: 40%;
         height: 50px;
-        border: none;
         border-radius: 5px;
         background-color: rgb(228, 156, 22);
         margin-top: 20px;
+        text-decoration: none;
+        color: black;
       }
     }
   }

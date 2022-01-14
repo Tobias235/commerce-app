@@ -1,0 +1,36 @@
+@use "../../assets/util" as *;
+
+.detailTitles {
+  height: 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid black;
+  font-weight: bold;
+}
+
+.productDetails {
+  height: 25px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.product {
+  flex: 1;
+}
+
+.price {
+  flex: 1;
+}
+
+.total {
+  flex: 1;
+  text-align: end;
+}
+
+.border {
+  display: flex;
+  width: 100%;
+  border-bottom: 2px solid black;
+}
